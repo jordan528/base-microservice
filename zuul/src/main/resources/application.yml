@@ -11,6 +11,9 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 30000
+ribbon:
+  ReadTimeout: 30000
+  ConnectTimeout: 30000
 zuul:
   routes:
     hello: /hello/**
