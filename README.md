@@ -45,10 +45,13 @@ Basic reverse proxy using Spring Cloud, running on port 8080. See this project f
 Sample rest client for security, running on port 8181. See this project for sample spring [security](http://projects.spring.io/spring-security/).
 
 ##Project : Category
-Sample rest client for shop categories, running on port 8182. See this project for sample spring REST inter-process communication using RestTemplate with running Eureka.
+Sample rest client for shop categories, running on port 8182. See this project for sample spring REST inter-process communication using RestTemplate with running Eureka. Also, this project shows example usage of [circuit breaker](http://martinfowler.com/bliki/CircuitBreaker.html) pattern using [Hystrix](https://github.com/Netflix/Hystrix).
 
 ##Project : Product
-Sample rest client for shop products, running on port 8183
+Sample rest client for shop products, running on port 8183. See this project for sample spring REST inter-process communication using Netflix Feign Client with running Eureka.
 
 ##Project : Email
 Sample rest client for email utilities, running on port 8184. See this project for sample [spring boot mail](http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-email.html) for gmail.
+
+##Project : Hystrix
+Running on port 8185. Example of hystrix dashboard & turbine.
