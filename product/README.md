@@ -1,2 +1,23 @@
 # Product
-I still don't know yet how to synchronize distributed database. I think I can use [redis](http://projects.spring.io/spring-data-redis/), but until I found out more, this will use shared database among rest services.
+## Zuul Timeout
+If you ever encountered an issue with stacktrace like this when executing a REST call via feign client:
+
+    ...
+    Caused by: java.util.concurrent.TimeoutException: null
+    ...
+
+Then you need to set feign client timeout (default is 1 second). See stackoverflow issue [here](http://stackoverflow.com/questions/40327631/service-via-zuul-cant-connect-to-gmail/40341898#40341898), [here](https://github.com/spring-cloud/spring-cloud-netflix/issues/696), and [here](http://stackoverflow.com/questions/28904247/zuul-timing-out-in-long-ish-requests) for solution.
+
+In my case, I configure product application.yml to has 30 seconds timeout for feign call. Configuration as follows:
+
+    hystrix:
+      command:
+        default:
+          execution:
+            isolation:
+              thread:
+                timeoutInMilliseconds: 30000
+    ribbon:
+      ReadTimeout: 30000
+      ConnectTimeout: 30000
+
