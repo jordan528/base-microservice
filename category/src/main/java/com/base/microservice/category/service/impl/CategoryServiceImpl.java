@@ -3,11 +3,14 @@ package com.base.microservice.category.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.base.microservice.category.hibernate.domain.Category;
+import com.base.microservice.category.service.CategoryService;
 import com.base.microservice.category.spring.repository.CategoryRepository;
 
-public class CategoryServiceImpl {
+@Service
+public class CategoryServiceImpl implements CategoryService {
 
 	@Autowired
 	private CategoryRepository categoryRepository;

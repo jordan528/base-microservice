@@ -23,8 +23,8 @@ public class CategoryRestController {
 	@PostMapping(value = "/save", produces = "text/html")
 	public String saveAndNotify() {
 		EmailSingleRecipient emailSingleRecipient = new EmailSingleRecipient("someone.email@gmail.com");
-		emailSingleRecipient.setBody("A new product published just now.");
-		emailSingleRecipient.setSubject("New product published");
+		emailSingleRecipient.setBody("A new category published just now.");
+		emailSingleRecipient.setSubject("New category published");
 
 		ResponseEntity<String> x = emailSenderService.sendToOne(emailSingleRecipient);
 
