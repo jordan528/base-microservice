@@ -19,6 +19,9 @@ public class EmailSenderServiceImpl implements EmailSenderService {
 	@HystrixCommand(fallbackMethod = "emailFallback")
 	public String sendEmail(EmailSingleRecipient emailSingleRecipient) {
 		// using feign client
+		// no endpoint URL required. Feign client will register itself to "email" service
+		// found in eureka service.
+		// See EmailRestClient @FeignClient annotation
 		ResponseEntity<String> x = emailRestClient.sendToOne(emailSingleRecipient);
 
 		return x.getBody();
