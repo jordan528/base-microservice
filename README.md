@@ -12,7 +12,7 @@ These projects was made using following technology stack:
 
  - **[Spring Boot](https://projects.spring.io/spring-boot/)**, includes Cloud, Rest, JPA with Hibernate, Security, etc
  - **[Maven](http://maven.apache.org/)**, so it will be easy for you to open in your favorite IDE. I use Eclipse STS, so some files specific for Eclipse STS was included on .gitignore
- - **[Swagger](http://swagger.io/) & [Springfox](http://springfox.github.io/springfox/)** for API documentation. There is a special note about using Swagger on production [here](https://github.com/timpamungkas/base-microservice/blob/master/documentations/swagger.md)
+ - **[Swagger](http://swagger.io/) & [Springfox](http://springfox.github.io/springfox/)** for API documentation. There is a special note about using Swagger [here](https://github.com/timpamungkas/base-microservice/blob/master/documentations/swagger.md)
  - **[Lombok](https://projectlombok.org/)** so your code will less verbose
 
 You don't have to be a Java expert to read the source, but you need to know how to code with Java, and better yet if you already know Spring MVC and Spring JPA with Hibernate.
