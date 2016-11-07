@@ -1,3 +1,6 @@
+#Swagger on Eureka Issue
+If on your Eureka instance, has been a eureka service application called *unknown*, and the application is using swagger with `@EnableSwagger2Config` annotation, it may the root problem. See [this issue](https://github.com/spring-cloud/spring-cloud-netflix/issues/1398]).
+
 #Disable Swagger on Production Environment
 [Swagger](http://swagger.io/) is indeed (not so) simple yet powerful like its official sites said:
 
@@ -11,7 +14,7 @@ Dangerous when you open your API documentation on production, while API docs sho
 
 So, basically swagger docs (either json format or swagger-ui) must be disabled on production environment. Thus, for all swagger config file (Swagger2Config.java), I created two Docket bean, based on active spring profile. Swagger will only be enabled on **dev** profile.
 
-IFyou want to know more, for each Swagger2Config, notice that I havve two method that returns Docket, annotated with `@Bean` and `@Profile`. Each will different on `@Profile`, where `@Profile("dev")` will enable swagger using `...build().apiInfo(apiInfo()).enable(true)`
+IFyou want to know more, for each Swagger2Config, notice that I have two method that returns Docket, annotated with `@Bean` and `@Profile`. Each will different on `@Profile`, where `@Profile("dev")` will enable swagger using `...build().apiInfo(apiInfo()).enable(true)`
 
 By default, Spring has profile **default** if you don't specify any property on .properties or .yml. In this project, application.yml does not specify spring profile active, thus swagger documentation will not be enabled.
 
