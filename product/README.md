@@ -23,7 +23,7 @@ See following files:
 
 See this code on [EmailSenderServiceImpl](https://github.com/timpamungkas/base-microservice/blob/master/product/src/main/java/com/base/microservice/product/service/impl/EmailSenderServiceImpl.java)?
 `@HystrixCommand(fallbackMethod = "emailFallback")`
-That is [circuit breaker](http://martinfowler.com/bliki/CircuitBreaker.html) handler, in case email service is down. In such case, we can add fallback handler using [hystrix](https://github.com/spring-cloud/spring-cloud-netflix/blob/master/docs/src/main/asciidoc/spring-cloud-netflix.adoc#circuit-breaker-hystrix-clients) to propagate failed method to default error handler, in this case is `methodFallback()`.
+That is [circuit breaker](http://martinfowler.com/bliki/CircuitBreaker.html) handler, in case email service is down. In such case, we can add fallback handler using [hystrix](https://github.com/spring-cloud/spring-cloud-netflix/blob/master/docs/src/main/asciidoc/spring-cloud-netflix.adoc#circuit-breaker-hystrix-clients) to propagate failed method to default error handler, in this case is `emailFallback()`.
 
 ## Zuul Timeout
 If you ever encountered an issue with stacktrace like this when executing a REST call via feign client:
