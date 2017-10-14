@@ -18,14 +18,17 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 
 @Entity
 @Table(name = "authorization_groups", uniqueConstraints = { @UniqueConstraint(columnNames = "group_name") })
 @Data
 @NoArgsConstructor
-@RequiredArgsConstructor
 public class AuthorizationGroup {
+
+	public AuthorizationGroup(String groupName) {
+		super();
+		this.groupName = groupName;
+	}
 
 	@JsonIgnore
 	@Id

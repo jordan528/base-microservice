@@ -1,5 +1,7 @@
 package com.base.microservice.hello.config;
 
+import java.util.Collections;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -20,7 +22,7 @@ public class Swagger2Config {
 		Contact contact = new Contact("Timotius Pamungkas", "", "");
 
 		ApiInfo apiInfo = new ApiInfo("Security API", "Sample REST api for hello", "Version 1.0",
-				"http://www.google.com", contact, "No License", "http://www.google.com");
+				"http://www.google.com", contact, "No License", "http://www.google.com", Collections.emptyList());
 
 		return apiInfo;
 	}

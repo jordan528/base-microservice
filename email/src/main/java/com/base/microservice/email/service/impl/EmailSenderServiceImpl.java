@@ -25,6 +25,7 @@ public class EmailSenderServiceImpl implements EmailSenderService {
 	@Value("${spring.mail.username}")
 	public String me;
 
+	@Override
 	public String sendToMany(Set<String> to, Set<String> cc, Set<String> bcc, String subject, String body,
 			boolean isHtmlContent, EmailAttachment... attachments) throws MessagingException {
 		MimeMessage message = javaMailSender.createMimeMessage();
@@ -59,6 +60,7 @@ public class EmailSenderServiceImpl implements EmailSenderService {
 		return "Mail sent";
 	}
 
+	@Override
 	public String sendToOne(String to, String cc, String bcc, String subject, String body, boolean isHtmlContent,
 			EmailAttachment... attachments) throws MessagingException {
 		Set<String> toList = null;
